@@ -1,0 +1,11 @@
+server:
+  port: 8102
+
+spring:
+  application:
+    name: swarm-product
+  profiles:
+    active: home
+
+#mybatis-plus:
+#  mapper-locations: classpath*:/dao/*.xml

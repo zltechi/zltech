@@ -1,0 +1,19 @@
+server:
+  port: 8001
+
+spring:
+  application:
+    name: as-portal
+  profiles:
+    active: home
+
+mybatis:
+  mapper-locations:
+    - classpath*:com/lohtech/swarm/model/**/*.xml
+    - classpath:dao/*.xml
+
+feign:
+  hystrix:
+    enabled: true
+
+

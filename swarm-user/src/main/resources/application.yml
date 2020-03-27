@@ -1,0 +1,37 @@
+server:
+  port: 8101
+
+spring:
+  application:
+    name: swarm-user
+  profiles:
+    active: dev
+
+jwt:
+  tokenHead: Authorization
+  tokenHeader: Bearer
+
+mybatis:
+  mapper-locations:
+    - classpath*:com/lohtech/swarm/model/**/*.xml
+    - classpath:dao/*.xml
+
+secure:
+  ignored:
+    urls:
+      - /swagger-ui.html
+      - /swagger-resources/**
+      - /swagger/**
+      - /webjars/springfox-swagger-ui/**
+      - /**/v2/api-docs
+      - /**/*.js
+      - /**/*.png
+      - /**/*.ico
+      - /admin/register
+      - /admin/login
+      - /admin/foo
+
+#mybatis:
+#  mapper-locations:
+#    - classpath:com/lohtech/swarm/user/dao/*.xml
+#    - classpath:com/lohtech/swarm/model/user/*.xml
