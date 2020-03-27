@@ -132,44 +132,44 @@ INSERT INTO `pms_product_attribute_value` VALUES (24, 4, 2, '500ml*1瓶');
 
 
 
--- 商品状态
--- ----------------------------
--- Table structure for pms_product_state
--- ----------------------------
-DROP TABLE IF EXISTS `pms_product_state`;
-CREATE TABLE `pms_product_state` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `name` varchar(64) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COMMENT='商品状态';
-
--- ----------------------------
--- Records of pms_product_state
--- ----------------------------
-INSERT INTO `pms_product_state` VALUES('1', '正常');
-INSERT INTO `pms_product_state` VALUES('2', '拍卖中');
-INSERT INTO `pms_product_state` VALUES('3', '赠送中');
-
-
-
--- 商品服务
--- ----------------------------
--- Table structure for pms_product_service
--- ----------------------------
-DROP TABLE IF EXISTS `pms_product_service`;
-CREATE TABLE `pms_product_service` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `name` varchar(64) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COMMENT='商品服务';
-
--- ----------------------------
--- Records of pms_product_service
--- ----------------------------
-INSERT INTO `pms_product_service` VALUES('1', '拍卖');
-INSERT INTO `pms_product_service` VALUES('2', '赠送');
-INSERT INTO `pms_product_service` VALUES('3', '回购');
-INSERT INTO `pms_product_service` VALUES('4', '提货');
-INSERT INTO `pms_product_service` VALUES('5', '退货');
+-- -- 商品状态
+-- -- ----------------------------
+-- -- Table structure for pms_product_state
+-- -- ----------------------------
+-- DROP TABLE IF EXISTS `pms_product_state`;
+-- CREATE TABLE `pms_product_state` (
+--   `id` bigint(20) NOT NULL AUTO_INCREMENT,
+--   `name` varchar(64) DEFAULT NULL,
+--   PRIMARY KEY (`id`)
+-- ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COMMENT='商品状态';
+--
+-- -- ----------------------------
+-- -- Records of pms_product_state
+-- -- ----------------------------
+-- INSERT INTO `pms_product_state` VALUES('1', '正常');
+-- INSERT INTO `pms_product_state` VALUES('2', '拍卖中');
+-- INSERT INTO `pms_product_state` VALUES('3', '赠送中');
+--
+--
+--
+-- -- 商品服务
+-- -- ----------------------------
+-- -- Table structure for pms_product_service
+-- -- ----------------------------
+-- DROP TABLE IF EXISTS `pms_product_service`;
+-- CREATE TABLE `pms_product_service` (
+--   `id` bigint(20) NOT NULL AUTO_INCREMENT,
+--   `name` varchar(64) DEFAULT NULL,
+--   PRIMARY KEY (`id`)
+-- ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COMMENT='商品服务';
+--
+-- -- ----------------------------
+-- -- Records of pms_product_service
+-- -- ----------------------------
+-- INSERT INTO `pms_product_service` VALUES('1', '拍卖');
+-- INSERT INTO `pms_product_service` VALUES('2', '赠送');
+-- INSERT INTO `pms_product_service` VALUES('3', '回购');
+-- INSERT INTO `pms_product_service` VALUES('4', '提货');
+-- INSERT INTO `pms_product_service` VALUES('5', '退货');
 
 

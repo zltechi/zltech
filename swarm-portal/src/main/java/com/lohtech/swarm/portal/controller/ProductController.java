@@ -1,5 +1,6 @@
 package com.lohtech.swarm.portal.controller;
 
+import com.lohtech.swarm.common.api.CommonPage;
 import com.lohtech.swarm.common.api.CommonResult;
 import com.lohtech.swarm.model.product.pojo.PmsProductCategory;
 import com.lohtech.swarm.portal.service.ProductService;
@@ -8,13 +9,13 @@ import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.util.List;
+
 
 @Api(tags = "Product", description = "product相关接口")
 @Controller
@@ -26,17 +27,17 @@ public class ProductController {
     @Autowired
     private ProductService productService;
 
-    @ApiOperation(value = "商品分类列表")
+    @ApiOperation(value = "分页查询商品分类")
     @RequestMapping(value = "/category", method = RequestMethod.GET)
     @ResponseBody
-    public CommonResult<List<PmsProductCategory>> productCategoryList() {
-        return productService.getProductCategoryList(0);
+    public CommonResult<CommonPage<PmsProductCategory>> productCategoryList() {
+        return productService.getProductCategoryList(0L);
     }
 
-    @ApiOperation(value = "商品详情")
-    @RequestMapping(value = "/category/{category_id}", method = RequestMethod.GET)
+    @ApiOperation(value = "根据id获取商品分类")
+    @RequestMapping(value = "/category/{id}", method = RequestMethod.GET)
     @ResponseBody
-    public CommonResult<Object> specificationById(@Param("category_id") Integer id) {
-        return CommonResult.success(id);
+    public CommonResult<PmsProductCategory> getItem(@PathVariable("id") Long id) {
+        return productService.getProductCategoryById(id);
     }
 }

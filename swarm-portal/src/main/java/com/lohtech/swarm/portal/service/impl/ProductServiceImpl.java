@@ -1,5 +1,6 @@
 package com.lohtech.swarm.portal.service.impl;
 
+import com.lohtech.swarm.common.api.CommonPage;
 import com.lohtech.swarm.common.api.CommonResult;
 import com.lohtech.swarm.model.product.pojo.PmsProductCategory;
 import com.lohtech.swarm.portal.feign.ProductFeignClient;
@@ -9,7 +10,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 
 @Service
 public class ProductServiceImpl implements ProductService {
@@ -21,7 +21,13 @@ public class ProductServiceImpl implements ProductService {
 
 
     @Override
-    public CommonResult<List<PmsProductCategory>> getProductCategoryList(Integer id) {
+    public CommonResult<CommonPage<PmsProductCategory>> getProductCategoryList(Long id) {
         return productFeignClient.getProductCategoryList(id);
     }
+
+    @Override
+    public CommonResult<PmsProductCategory> getProductCategoryById(Long id) {
+        return productFeignClient.getProductCategoryById(id);
+    }
+
 }

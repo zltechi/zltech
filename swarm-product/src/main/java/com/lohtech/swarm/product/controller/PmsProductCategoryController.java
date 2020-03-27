@@ -49,7 +49,7 @@ public class PmsProductCategoryController {
     }
 
     @ApiOperation("修改商品分类")
-    @RequestMapping(value = "/{id}", method = {RequestMethod.PATCH, RequestMethod.PUT})
+    @RequestMapping(value = "{id}", method = {RequestMethod.PATCH, RequestMethod.PUT})
     @ResponseBody
     public CommonResult<Integer> update(@PathVariable("id") Long id,
                                         @Validated @RequestBody PmsProductCategoryParam param,
@@ -63,7 +63,7 @@ public class PmsProductCategoryController {
     }
 
     @ApiOperation("根据id获取商品分类")
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "{id}", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<PmsProductCategory> getItem(@PathVariable Long id) {
         PmsProductCategory productCategory = productCategoryService.getItem(id);
@@ -73,7 +73,7 @@ public class PmsProductCategoryController {
     @ApiOperation("分页查询商品分类")
     @RequestMapping(value = "/list/{id}", method = RequestMethod.GET)
     @ResponseBody
-    public CommonResult<Object> getList(@PathVariable("id") @Valid Long parentId,
+    public CommonResult<CommonPage<PmsProductCategory>> getList(@PathVariable("id") @Valid Long parentId,
                                         @RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum,
                                         @RequestParam(value = "pageSize", defaultValue = "10") Integer pageSize) {
         List<PmsProductCategory> productCategoryList = productCategoryService.getList(parentId, pageNum, pageSize);
